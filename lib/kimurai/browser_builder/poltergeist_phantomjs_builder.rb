@@ -6,12 +6,12 @@ require_relative '../capybara_ext/session'
 
 module Kimurai::BrowserBuilder
   class PoltergeistPhantomjsBuilder
-    attr_reader :logger, :spider
+    include Loggable
+    attr_reader :spider
 
     def initialize(config, spider:)
       @config = config
       @spider = spider
-      @logger = spider.logger
     end
 
     def build

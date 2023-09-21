@@ -1,11 +1,5 @@
 Kimurai.configure do |config|
   # Default logger has colored mode in development.
-  # If you would like to disable it, set `colorize_logger` to false.
-  # config.colorize_logger = false
-
-  # Logger level for default logger:
-  # config.log_level = :info
-
   # Custom logger:
   # config.logger = Logger.new(STDOUT)
 

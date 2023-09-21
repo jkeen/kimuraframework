@@ -1,0 +1,36 @@
+example_id                              | status  | run_time        |
+--------------------------------------- | ------- | --------------- |
+./spec/kimurai/base_spec.rb[1:1:1]      | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:2:1]      | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:3:1]      | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:4:1]      | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:5:1]      | pending | 0.00002 seconds |
+./spec/kimurai/base_spec.rb[1:6:1]      | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:7:1]      | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:8:1]      | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:9:1]      | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:10:1]     | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:11:1]     | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:12:1]     | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:13:1]     | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:14:1]     | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:15:1]     | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:16:1]     | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:17:1]     | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:18:1]     | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:19:1]     | pending | 0.00001 seconds |
+./spec/kimurai/base_spec.rb[1:20:1]     | pending | 0 seconds       |
+./spec/kimurai/base_spec.rb[1:21:1:1]   | passed  | 0.00822 seconds |
+./spec/kimurai/base_spec.rb[1:21:1:2:1] | passed  | 0.00366 seconds |
+./spec/kimurai/base_spec.rb[1:21:2:1]   | passed  | 0.01315 seconds |
+./spec/kimurai/base_spec.rb[1:22:1]     | pending | 0 seconds       |
+./spec/kimurai/cli_spec.rb[1:1:1:1]     | passed  | 0.00231 seconds |
+./spec/kimurai/cli_spec.rb[1:1:1:2]     | passed  | 0.0014 seconds  |
+./spec/kimurai/cli_spec.rb[1:1:2:1]     | passed  | 0.00621 seconds |
+./spec/kimurai/cli_spec.rb[1:1:2:2]     | passed  | 0.00033 seconds |
+./spec/kimurai/cli_spec.rb[1:1:3:1]     | passed  | 0.00235 seconds |
+./spec/kimurai/cli_spec.rb[1:1:4:1]     | passed  | 0.00022 seconds |
+./spec/kimurai/cli_spec.rb[1:2:1]       | passed  | 0.02897 seconds |
+./spec/kimurai/cli_spec.rb[1:3:1]       | pending | 0.00001 seconds |
+./spec/kimurai/cli_spec.rb[1:4:1]       | pending | 0.00005 seconds |
+./spec/kimurai/cli_spec.rb[1:5:1]       | pending | 0.00001 seconds |

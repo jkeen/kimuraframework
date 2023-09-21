@@ -5,6 +5,7 @@ module Kimurai
       self.to_s.sub(/.*?::/, "").underscore.to_sym
     end
 
+    include Loggable
     include BaseHelper
     attr_accessor :spider
 
@@ -26,8 +27,5 @@ module Kimurai
       spider.save_to(path, item, format: format, position: position, append: append)
     end
 
-    def logger
-      spider.logger
-    end
   end
 end

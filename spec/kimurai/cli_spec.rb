@@ -1,5 +1,3 @@
-require 'Kimurai/cli'
-
 RSpec.describe Kimurai::CLI do
   describe "#generate" do
     context "when generator_type is 'project'" do

@@ -9,21 +9,13 @@ module Kimurai
     # don't deep merge config's headers hash option
     DMERGE_EXCLUDE = [:headers]
 
-    LoggerFormatter = proc do |severity, datetime, progname, msg|
-      current_thread_id = Thread.current.object_id
-      thread_type = Thread.main == Thread.current ? "M" : "C"
-      output = "%s, [%s#%d] [%s: %s] %5s -- %s: %s\n"
-        .freeze % [severity[0..0], datetime, $$, thread_type, current_thread_id, severity, progname, msg]
-
-      if Kimurai.configuration.colorize_logger != false && Kimurai.env == "development"
-        Rbcat.colorize(output, predefined: [:jsonhash, :logger])
-      else
-        output
-      end
-    end
-
+    include Loggable
     include BaseHelper
 
+    using InSortedGroups
+    using Duration
+    using DeepMergeExclude
+    using StringToId
     ###
 
     class << self
@@ -91,14 +83,6 @@ module Kimurai
     end
 
     ###
-
-    def self.logger
-      @logger ||= Kimurai.configuration.logger || begin
-        log_level = (ENV["LOG_LEVEL"] || Kimurai.configuration.log_level || "DEBUG").to_s.upcase
-        log_level = "Logger::#{log_level}".constantize
-        Logger.new(STDOUT, formatter: LoggerFormatter, level: log_level, progname: name)
-      end
-    end
 
     def self.crawl!(exception_on_fail: true, data: {})
       logger.error "Spider: already running: #{name}" and return false if running?
@@ -176,7 +160,6 @@ module Kimurai
 
     ###
 
-    attr_reader :logger
     attr_accessor :with_info
 
     def initialize(engine = self.class.engine, config: {})
@@ -189,7 +172,6 @@ module Kimurai
         [pipeline_name, instance]
       end.to_h
 
-      @logger = self.class.logger
       @savers = {}
     end
 

@@ -5,6 +5,7 @@ require_relative 'session/config'
 
 module Capybara
   class Session
+    include Loggable
     attr_accessor :spider
 
     alias_method :original_visit, :visit
@@ -240,10 +241,6 @@ module Capybara
         driver.set_proxy(*proxy_string.split(":"))
         logger.debug "Browser: changed proxy before request"
       end
-    end
-
-    def logger
-      spider.logger
     end
   end
 end

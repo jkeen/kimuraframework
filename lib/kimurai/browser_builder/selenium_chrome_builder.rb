@@ -6,16 +6,16 @@ require_relative '../capybara_ext/session'
 
 module Kimurai::BrowserBuilder
   class SeleniumChromeBuilder
+    include Loggable
     class << self
       attr_accessor :virtual_display
     end
 
-    attr_reader :logger, :spider
+    attr_reader :spider
 
     def initialize(config, spider:)
       @config = config
       @spider = spider
-      @logger = spider.logger
     end
 
     def build

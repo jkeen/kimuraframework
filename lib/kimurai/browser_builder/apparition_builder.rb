@@ -5,12 +5,12 @@ require_relative '../capybara_ext/apparition/driver'
 
 module Kimurai::BrowserBuilder
   class ApparitionBuilder
-    attr_reader :logger, :spider
+    include Loggable
+    attr_reader :spider
 
     def initialize(config, spider:)
       @config = config
       @spider = spider
-      @logger = spider.logger
     end
 
     def build
